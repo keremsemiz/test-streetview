@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>360° Panorama</title>
+    <link rel="stylesheet" type="text/css" href="https://pannellum.org/css/pannellum.css">
+    <script type="text/javascript" src="https://pannellum.org/js/pannellum.js"></script>
+</head>
+<body>
+    <div id="panorama" style="width: 800px; height: 400px;"></div>
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "street_view_0.png",
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "View 0",
+                    "sceneId": "0"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 45,
+                    "type": "scene",
+                    "text": "View 45",
+                    "sceneId": "45"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 90,
+                    "type": "scene",
+                    "text": "View 90",
+                    "sceneId": "90"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 135,
+                    "type": "scene",
+                    "text": "View 135",
+                    "sceneId": "135"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 315,
+                    "type": "scene",
+                    "text": "View 315",
+                    "sceneId": "315"
+                }
+            ]
+        })
+    </script>
+</body>
