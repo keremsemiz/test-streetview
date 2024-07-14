@@ -6,49 +6,41 @@
     <script type="text/javascript" src="https://pannellum.org/js/pannellum.js"></script>
 </head>
 <body>
-    <div id="panorama" style="width: 800px; height: 400px;"></div>
+    <div id="panorama" style="width: 100%; height: 80vh;"></div>
+    <button onclick="loadRandomPanorama()" style="position: absolute; top: 20px; left: 20px; z-index: 1000;">Load Random Panorama</button>
     <script>
-        pannellum.viewer('panorama', {
+        var viewer = pannellum.viewer('panorama', {
             "type": "equirectangular",
             "panorama": "street_view_0.png",
             "autoLoad": true,
+            "autoRotate": 2,
+            "showFullscreenCtrl": true,
             "hotSpots": [
-                {
-                    "pitch": 0,
-                    "yaw": 0,
-                    "type": "scene",
-                    "text": "View 0",
-                    "sceneId": "0"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": 45,
-                    "type": "scene",
-                    "text": "View 45",
-                    "sceneId": "45"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": 90,
-                    "type": "scene",
-                    "text": "View 90",
-                    "sceneId": "90"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": 135,
-                    "type": "scene",
-                    "text": "View 135",
-                    "sceneId": "135"
-                },
-                {
-                    "pitch": 0,
-                    "yaw": 315,
-                    "type": "scene",
-                    "text": "View 315",
-                    "sceneId": "315"
-                }
-            ]
-        })
+                { "pitch": 0, "yaw": 0, "type": "scene", "text": "View 0", "sceneId": "0" },
+                { "pitch": 0, "yaw": 45, "type": "scene", "text": "View 45", "sceneId": "45" },
+                { "pitch": 0, "yaw": 90, "type": "scene", "text": "View 90", "sceneId": "90" },
+                { "pitch": 0, "yaw": 135, "type": "scene", "text": "View 135", "sceneId": "135" },
+                { "pitch": 0, "yaw": 180, "type": "scene", "text": "View 180", "sceneId": "180" },
+                { "pitch": 0, "yaw": 225, "type": "scene", "text": "View 225", "sceneId": "225" },
+                { "pitch": 0, "yaw": 270, "type": "scene", "text": "View 270", "sceneId": "270" },
+                { "pitch": 0, "yaw": 315, "type": "scene", "text": "View 315", "sceneId": "315" }
+            ],
+            "scenes": {
+                "0": { "panorama": "street_view_0.png" },
+                "45": { "panorama": "street_view_45.png" },
+                "90": { "panorama": "street_view_90.png" },
+                "135": { "panorama": "street_view_135.png" },
+                "180": { "panorama": "street_view_180.png" },
+                "225": { "panorama": "street_view_225.png" },
+                "270": { "panorama": "street_view_270.png" },
+                "315": { "panorama": "street_view_315.png" }
+            }
+        });
+
+        function loadRandomPanorama() {
+            // fetch new images iomplemetn this sometime
+            console.log("Loading new random panorama...");
+        }
     </script>
 </body>
+</html>
